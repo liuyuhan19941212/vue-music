@@ -1,17 +1,17 @@
 <template>
   <div class="singer" ref="singer">
-    <listview @selected="selectSinger" :data="singers" ref="list"></listview>
+    <list-view @select="selectSinger" :data="singers" ref="list"></list-view>
     <router-view></router-view>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import { getSingerList } from 'api/singer'
-  import { ERR_OK } from 'api/config'
+  import ListView from 'base/listview/listview'
+  import {getSingerList} from 'api/singer'
+  import {ERR_OK} from 'api/config'
   import Singer from 'common/js/singer'
-  import Listview from 'base/listview/listview'
-  import { mapMutations } from 'vuex'
-  import { playlistMixin } from 'common/js/mixin'
+  import {mapMutations} from 'vuex'
+  import {playlistMixin} from 'common/js/mixin'
 
   const HOT_SINGER_LEN = 10
   const HOT_NAME = '热门'
@@ -71,9 +71,9 @@
             id: item.Fsinger_mid
           }))
         })
-
-        let hot = []
+        // 为了得到有序列表，我们需要处理 map
         let ret = []
+        let hot = []
         for (let key in map) {
           let val = map[key]
           if (val.title.match(/[a-zA-Z]/)) {
@@ -92,7 +92,7 @@
       })
     },
     components: {
-      Listview
+      ListView
     }
   }
 

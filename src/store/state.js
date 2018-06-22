@@ -1,6 +1,3 @@
-/**
- * Created by 刘雨涵 on 2017/6/9.
- */
 import {playMode} from 'common/js/config'
 import {loadSearch, loadPlay, loadFavorite} from 'common/js/cache'
 

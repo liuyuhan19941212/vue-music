@@ -63,7 +63,9 @@ apiRoutes.get('/lyric', function (req, res) {
     console.log(e)
   })
 })
+
 app.use('/api', apiRoutes)
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

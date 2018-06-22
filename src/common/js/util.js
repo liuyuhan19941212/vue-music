@@ -1,6 +1,3 @@
-/**
- * Created by 刘雨涵 on 2017/6/15.
- */
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }

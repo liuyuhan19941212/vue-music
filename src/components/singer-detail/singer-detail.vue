@@ -5,18 +5,13 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import { mapGetters } from 'vuex'
-  import { getSingerDetail } from 'api/singer'
-  import { ERR_OK } from 'api/config'
-  import { createSong } from 'common/js/song'
   import MusicList from 'components/music-list/music-list'
+  import {getSingerDetail} from 'api/singer'
+  import {ERR_OK} from 'api/config'
+  import {createSong} from 'common/js/song'
+  import {mapGetters} from 'vuex'
 
   export default {
-    data() {
-      return {
-        songs: []
-      }
-    },
     computed: {
       title() {
         return this.singer.name
@@ -27,6 +22,11 @@
       ...mapGetters([
         'singer'
       ])
+    },
+    data() {
+      return {
+        songs: []
+      }
     },
     created() {
       this._getDetail()
@@ -61,10 +61,8 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-  @import "~common/stylus/variable"
-
   .slide-enter-active, .slide-leave-active
-    transition all 0.3s
+    transition: all 0.3s
 
   .slide-enter, .slide-leave-to
     transform: translate3d(100%, 0, 0)

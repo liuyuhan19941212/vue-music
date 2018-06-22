@@ -106,6 +106,7 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/variable"
   @import "~common/stylus/mixin"
+
   .search
     .search-box-wrapper
       margin: 20px

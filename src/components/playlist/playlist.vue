@@ -11,7 +11,7 @@
         </div>
         <scroll ref="listContent" :data="sequenceList" class="list-content" :refreshDelay="refreshDelay">
           <transition-group name="list" tag="ul">
-            <li :key="item.id" ref="listItem" class="item" v-for="(item, index) in sequenceList"
+            <li :key="item.id" ref="listItem" class="item" v-for="(item,index) in sequenceList"
                 @click="selectItem(item,index)">
               <i class="current" :class="getCurrentIcon(item)"></i>
               <span class="text">{{item.name}}</span>
@@ -133,6 +133,7 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/variable"
   @import "~common/stylus/mixin"
+
   .playlist
     position: fixed
     left: 0

@@ -16,11 +16,11 @@
         </uL>
       </li>
     </ul>
-    <div class="list-shortcut" @touchstart.stop.prevent="onShortcutTouchStart" @touchmove.stop.prevent="onShortcutTouchMove"
-         @touchend.stop>
+    <div class="list-shortcut" @touchstart="onShortcutTouchStart" @touchmove.stop.prevent="onShortcutTouchMove">
       <ul>
         <li v-for="(item, index) in shortcutList" :data-index="index" class="item"
             :class="{'current':currentIndex===index}">{{item}}
+
         </li>
       </ul>
     </div>
@@ -76,7 +76,7 @@
     },
     methods: {
       selectItem(item) {
-        this.$emit('selected', item)
+        this.$emit('select', item)
       },
       onShortcutTouchStart(e) {
         let anchorIndex = getData(e.target, 'index')

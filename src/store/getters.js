@@ -1,6 +1,3 @@
-/**
- * Created by 刘雨涵 on 2017/6/9.
- */
 export const singer = state => state.singer
 
 export const playing = state => state.playing
@@ -28,4 +25,3 @@ export const searchHistory = state => state.searchHistory
 export const playHistory = state => state.playHistory
 
 export const favoriteList = state => state.favoriteList
-
